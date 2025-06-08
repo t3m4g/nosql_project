@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import { Toaster } from "./components/Toast/toaster";
+import { Toaster as Sonner } from "./components/Toast/sonner";
+
 
 
 function AppRoutes() {
@@ -34,6 +37,8 @@ function App() {
   return (
     <React.StrictMode>
       <BrowserRouter future={{ v7_startTransition: true }}>
+        <Toaster />
+        <Sonner />
         <AppRoutes />
       </BrowserRouter>
     </React.StrictMode>
