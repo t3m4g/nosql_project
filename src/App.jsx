@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
+import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "./components/Toast/toaster";
 import { Toaster as Sonner } from "./components/Toast/sonner";
@@ -15,7 +15,7 @@ function AppRoutes() {
         path="/"
         element={
           <Layout>
-            <Dashboard />
+            <Index />
           </Layout>
         }
       />
