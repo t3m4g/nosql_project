@@ -42,6 +42,36 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				},
+				uac: {
+					red: {
+						light: '#FF5A5A',
+						DEFAULT: '#FF0000',
+						dark: '#C00000'
+					},
+					yellow: {
+						light: '#FFF176',
+						DEFAULT: '#FFFF00',
+						dark: '#D6D600'
+					},
+					green: {
+						light: '#66BB6A',
+						DEFAULT: '#008000',
+						dark: '#005700'
+					},
+					black: {
+						DEFAULT: '#000000'
+					}
+				}
 			},
       animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',

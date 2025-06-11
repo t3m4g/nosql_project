@@ -5,6 +5,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "./components/Toast/toaster";
 import { Toaster as Sonner } from "./components/Toast/sonner";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 
@@ -16,6 +18,22 @@ function AppRoutes() {
         element={
           <Layout>
             <Index />
+          </Layout>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <Layout>
+            <Login />
+          </Layout>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <Layout>
+            <Register />
           </Layout>
         }
       />
