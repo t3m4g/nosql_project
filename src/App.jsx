@@ -7,6 +7,11 @@ import Layout from "./components/Layout/Layout";
 import Home from './pages/Acceuil';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import RegisterDoctor from './pages/RegisterDocteur';
+import Dashboard from './pages/Dashboard';
+import DoctorProfile from './pages/DoctorProfile';
+import SearchDoctor from './pages/SearchDoctor';
+import PrendreRdv from './pages/PrendreRdv';
 
 function AppRoutes() {
   return (
@@ -32,6 +37,46 @@ function AppRoutes() {
         element={
           <Layout>
             <Register />
+          </Layout>
+        }
+      />
+      <Route
+        path="/add-doctor"
+        element={
+          <Layout>
+            <RegisterDoctor />
+          </Layout>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <Layout>
+            <Dashboard />
+          </Layout>
+        }
+      />
+      <Route
+        path="/profile/:id"
+        element={
+          <Layout>
+            <DoctorProfile />
+          </Layout>
+        }
+      />
+      <Route
+        path="/search"
+        element={
+          <Layout>
+            <SearchDoctor />
+          </Layout>
+        }
+      />
+      <Route
+        path="/prendre-rdv"
+        element={
+          <Layout>
+            <PrendreRdv />
           </Layout>
         }
       />
