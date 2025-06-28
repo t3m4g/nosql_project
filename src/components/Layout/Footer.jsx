@@ -1,10 +1,12 @@
+import Logo from "./../../assets/LOGO.png"
+
 function Footer() {
   return (
     <footer className="w-full text-gray-700 py-10 mt-10">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         
         <div className="space-y-4">
-          <img src="/logo.png" alt="logo" className="w-24" />
+          <img src={Logo} alt="logo" className="w-24" />
           <p className="text-sm">Un petit commentaire sur le site web de LOCDOC</p>
         </div>
 
