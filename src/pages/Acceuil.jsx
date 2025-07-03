@@ -7,7 +7,9 @@ function Home() {
         {/* Section de présentation */}
         <section className="bg-gradient-to-br from-[#9898E3] to-white py-16 px-6 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 text-white">
-            <h1 className="text-4xl font-bold mb-4">Bienvenue sur LOCDOC</h1>
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent">
+            Bienvenue sur LOCDOC
+          </h1>
             <p className="text-lg">Prenez rendez-vous facilement avec des médecins qualifiés près de chez vous.</p>
           </div>
           <div className="flex-1">
