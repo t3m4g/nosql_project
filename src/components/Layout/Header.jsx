@@ -13,7 +13,7 @@ function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#EAEBF4] shadow-md z-50">
+    <header className="fixed top-0 left-0 right-0 bg-[#EAEBF4] shadow-md z-50 px-16">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between space-y-3">
         
         {/* Logo */}
@@ -22,10 +22,10 @@ function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex space-x-4 bg-[#f3f3fa] px-4 py-2 rounded-full border border-gray-200">
-          <button className="text-sm font-medium text-gray-700 hover:text-blue-600 transition" onClick={() => navigate("/")}>Accueil</button>
-          <button className="text-sm font-medium text-gray-700 hover:text-blue-600 transition" onClick={() => navigate("/doctors")}>Trouver un docteur</button>
-          <button className="text-sm font-medium text-gray-700 hover:text-blue-600 transition" onClick={() => navigate("/about")}>À propos</button>
+        <nav className="flex space-x-32 bg-[#f3f3fa] px-4 py-2 rounded-full border border-gray-200">
+          <button className="text-sm font-medium text-gray-700 hover:text-[#5F67C7] transition" onClick={() => navigate("/")}>Accueil</button>
+          <button className="text-sm font-medium text-gray-700 hover:text-[#5F67C7] transition" onClick={() => navigate("/doctors")}>Trouver un docteur</button>
+          <button className="text-sm font-medium text-gray-700 hover:text-[#5F67C7] transition" onClick={() => navigate("/about")}>À propos</button>
 
           {/* Bouton spécial si medecin */}
           {isAuthenticated && user?.role?.includes("doctor") && (
@@ -43,13 +43,13 @@ function Header() {
           {!isAuthenticated ? (
             <>
               <button
-                className="flex items-center text-sm text-gray-700 hover:text-blue-600 transition"
+                className="flex items-center text-sm text-[#9898E3] hover:text-[#5F67C7] transition"
                 onClick={() => navigate("/login")}
               >
-                <FaUser className="mr-1" /> Se connecter
+                <FaUser className="mr-1 " /> Se connecter
               </button>
               <button
-                className="bg-[#9898E3] text-white text-sm px-4 py-2 rounded-full hover:bg-[#7c7cdb] transition"
+                className="bg-[#9898E3] text-white text-sm px-4 py-2 rounded-xl hover:bg-[#7c7cdb] transition"
                 onClick={() => navigate("/register")}
               >
                 S'inscrire

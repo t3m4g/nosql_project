@@ -2,7 +2,7 @@ import Logo from "./../../assets/LOGO.png"
 
 function Footer() {
   return (
-    <footer className="w-full border-t border-gray-300 text-gray-700 py-10 mt-10">
+    <footer className="w-full bg-gradient-to-b from-white to-[#EAEBF4] border-t border-gray-300 text-gray-700 py-10 mt-10">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         
         <div className="space-y-4">
@@ -31,7 +31,7 @@ function Footer() {
 
 
       </div>
-      <div className=" pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div className=" px-4 pt-8 flex flex-col md:flex-row justify-between items-center">
         <p className="text-gray-400 text-xs mb-4 md:mb-0">
         &copy; {new Date().getFullYear()} Tous droits réservés | LOCDOC.
         </p>

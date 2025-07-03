@@ -1,18 +1,37 @@
+import { useEffect, useRef } from "react";
 import Medecin from "./../assets/MEDECIN.png"
+import PatientTestimonials from "../components/PageTestimonials";
+
 
 function Home() {
+
     return (
-      <div className="flex flex-col space-y-20">
+      <div className="flex flex-col space-y-20 w-full ">
         
         {/* Section de présentation */}
-        <section className="bg-gradient-to-br from-[#9898E3] to-white py-16 px-6 flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 text-white">
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent">
-            Bienvenue sur LOCDOC
-          </h1>
-            <p className="text-lg">Prenez rendez-vous facilement avec des médecins qualifiés près de chez vous.</p>
+        <section className="bg-gradient-to-b from-[#EAEBF4] to-white py-16 px-6 flex flex-col md:flex-row items-center">
+          <div className="flex-1 text-white space-y-5 text-left pt-20">
+            <div className="" >
+              <h1 className="text-4xl font-bold bg-gray-700 mb-4 bg-clip-text text-transparent">
+                Trouvez le bon medecin,
+              </h1>
+              <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent">
+                Au bon moment
+              </h1>
+              <h1 className="text-4xl font-bold mb-4 bg-gray-600 bg-clip-text text-transparent">
+                Au bon endroit
+              </h1>
+            </div>
+            <p className="text-sm text-gray-800">Recherchez les spécialistes qualifiés proche de vous. Prenez rendez-vous facilement et obtenez les soins dont vous avez besoin.</p>
+
+            <button
+              className="bg-[#9898E3] text-white text-sm px-4 py-2 rounded-xl hover:bg-[#7c7cdb] transition"
+              onClick={() => navigate("/register")}
+            >
+              Prendre un rendez-vous maintenant
+            </button>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 pt-20">
             <img
               src={Medecin}
               alt="Docteur"
@@ -23,7 +42,12 @@ function Home() {
   
         {/* Raisons de choisir LOCDOC */}
         <section className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold mb-8">Pourquoi choisir LOCDOC ?</h2>
+          <div className="flex flex-1 justify-center" >
+            <h2 className="text-2xl font-bold mb-8">Pourquoi choisir </h2>
+            <h2 className="text-2xl font-bold bg-gray-700 mb-8 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent ml-2">
+               LOCDOC ?
+            </h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h3 className="font-semibold text-lg mb-2">Accessibilité</h3>
@@ -42,7 +66,12 @@ function Home() {
   
         {/* Comment ça marche */}
         <section className="bg-gray-100 py-16 px-6 text-center">
-          <h2 className="text-2xl font-bold mb-10">Comment ça marche ?</h2>
+          <div className="flex flex-1 justify-center" >
+            <h2 className="text-2xl font-bold bg-gray-700 mb-8 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent mr-2">
+               Comment
+            </h2>
+            <h2 className="text-2xl font-bold mb-8">ça marche ?</h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <div className="p-4">
               <h3 className="font-semibold text-lg mb-2">1. Choisir votre localisation</h3>
@@ -61,12 +90,22 @@ function Home() {
   
         {/* Nos spécialistes */}
         <section className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold mb-10">Nos spécialistes de référence</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <img src="/medecin1.jpg" alt="Spécialiste 1" className="rounded-lg shadow-md object-cover h-64 w-full" />
-            <img src="/medecin2.jpg" alt="Spécialiste 2" className="rounded-lg shadow-md object-cover h-64 w-full" />
-            <img src="/medecin3.jpg" alt="Spécialiste 3" className="rounded-lg shadow-md object-cover h-64 w-full" />
+          <div className="mb-8" >
+            <h2 className="text-2xl font-bold bg-gray-700 mb-2 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent mr-2">
+              Prêt à trouver un médecin ?
+            </h2>
+            <p className="text-xs" >Rejoignez +100 000 patients qui prennent le contrôle de leurs soins avec LocDoc.</p>
           </div>
+          
+          <PatientTestimonials />
+
+          <button
+            className="bg-[#9898E3] text-white text-sm px-4 py-2 rounded-xl hover:bg-[#7c7cdb] transition"
+            onClick={() => navigate("/register")}
+          >
+            Passer à l'action
+          </button>
+
         </section>
   
       </div>
