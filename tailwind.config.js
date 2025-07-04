@@ -75,7 +75,7 @@ export default {
 				}
 			},
       animation: {
-				'scroll-x': 'scrollX 30s linear infinite',
+				'scroll-x': 'scrollX 10s linear infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},

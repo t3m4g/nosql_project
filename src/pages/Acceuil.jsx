@@ -12,13 +12,13 @@ function Home() {
         <section className="bg-gradient-to-b from-[#EAEBF4] to-white py-16 px-6 flex flex-col md:flex-row items-center">
           <div className="flex-1 text-white space-y-5 text-left pt-20">
             <div className="" >
-              <h1 className="text-4xl font-bold bg-gray-700 mb-4 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold bg-gray-700 mb-1 bg-clip-text text-transparent">
                 Trouvez le bon medecin,
               </h1>
-              <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold mb-1 bg-gradient-to-r from-[#9898E3] to-[#6CC2A5] bg-clip-text text-transparent">
                 Au bon moment
               </h1>
-              <h1 className="text-4xl font-bold mb-4 bg-gray-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold mb-1 bg-gray-600 bg-clip-text text-transparent">
                 Au bon endroit
               </h1>
             </div>

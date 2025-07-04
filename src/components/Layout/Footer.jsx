@@ -2,28 +2,28 @@ import Logo from "./../../assets/LOGO.png"
 
 function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-b from-white to-[#EAEBF4] border-t border-gray-300 text-gray-700 py-10 mt-10">
+    <footer className="w-full bg-gradient-to-b from-white to-[#EAEBF4] border-t border-gray-300 text-gray-700 py-5 mt-10">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         
-        <div className="space-y-4">
+        <div className="space-y-2">
           <img src={Logo} alt="logo" className="w-24" />
         </div>
 
-        <div className="space-y-2 text-left">
-          <h2 className="font-semibold text-gray-500 text-xs mb-4">Prendre un rdv ?</h2>
+        <div className=" text-left">
+          <h2 className="font-semibold text-gray-500 text-xs mb-2">Prendre un rdv ?</h2>
           <p className="text-sm" >Rendez vous</p>
         </div>
 
-        <div className="space-y-2 text-left">
-          <h2 className="font-semibold text-gray-500 text-xs mb-4">Compagnie</h2>
+        <div className="space-y-1 text-left">
+          <h2 className="font-semibold text-gray-500 text-xs mb-2">Compagnie</h2>
           <p className="text-sm" >À propos</p>
           <p className="text-sm">Fonctionnalités</p>
           <p className="text-sm">Projets</p>
           <p className="text-sm">Carrières</p>
         </div>
 
-        <div className="space-y-2 text-left">
-          <h2 className="font-semibold text-gray-500 text-xs mb-4">Aide</h2>
+        <div className="space-y-1 text-left">
+          <h2 className="font-semibold text-gray-500 text-xs mb-2">Aide</h2>
           <p className="text-sm">Support client</p>
           <p className="text-sm">Termes & Conditions</p>
           <p className="text-sm">Politique de confidentialité</p>
@@ -31,8 +31,8 @@ function Footer() {
 
 
       </div>
-      <div className=" px-4 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-gray-400 text-xs mb-4 md:mb-0">
+      <div className=" px-4 pt-1 flex flex-col md:flex-row justify-between items-center">
+        <p className="text-gray-400 text-xs mb-2 md:mb-0">
         &copy; {new Date().getFullYear()} Tous droits réservés | LOCDOC.
         </p>
 
