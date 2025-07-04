@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connexion LOCDOC</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+</head>
+<body>
+  <div class="page-container">
+  <div class="image">
+    <img src="phon.png" alt="Doctor illustration" />
+  </div>
+
+  <div class="gradient-overlay"></div>
+
+  <div class="form-container">
+    <h2 class="form-title gradient-title">Bienvenu à nouveau</h2>
+    <p>Nous sommes ravis de vous revoir :)</p>
+
+    <form class="form" action="#" method="POST">
+     <!-- Champ Email -->
+<div class="form-group">
+  <label for="email" class="label">Adresse email</label>
+  <div class="input-icon-wrapper">
+    <i class="fa-solid fa-envelope"></i>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="exemple@locdoc.com"
+      required
+      class="input"
+    />
+  </div>
+</div>
+<!-- Champ Mot de passe -->
+
+<div class="form-group">
+  <label for="password" class="label">Mot de passe</label>
+  <div class="input-icon-wrapper password-wrapper">
+    <i class="fa-solid fa-lock"></i>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="••••••••"
+      required
+      class="input password-input"
+    />
+    <button
+      type="button"
+      class="toggle-password"
+      aria-label="Afficher/Masquer le mot de passe"
+      onclick="togglePasswordVisibility(this)"
+    >
+      <i class="fa-solid fa-eye"></i>
+    </button>
+  </div>
+</div>
+
+
+
+      <div class="options-row">
+  <label class="remember">
+    <input type="checkbox" id="remember" />
+    Se souvenir de moi
+  </label>
+  <div class="forgot-password">
+    <a href="#">Mot de passe oublié ?</a>
+  </div>
+</div>
+
+<button type="submit" class="btn-submit">Se connecter</button>
+    </form>
+
+    <p class="signup-text">
+      Vous n’avez pas de compte ? <a href="#">Créez-en un</a>
+    </p>
+  </div>
+</div>
+
+
+<script>
+  function togglePasswordVisibility(button) {
+    const input = button.parentElement.querySelector("input");
+    const icon = button.querySelector("i");
+
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    }
+  }
+</script>
+
+
+</body>
+</html>

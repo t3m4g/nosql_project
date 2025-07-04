@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscription LOCDOC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .page-container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem 4rem;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+ 
+.page-container::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-image: url('cart.jpg'); /* met ton image ici */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* contrôle la transparence */
+  z-index: 0;
+  pointer-events: none; /* laisse passer les clics */
+}
+
+    /* Image à gauche */
+    .image {
+      flex: 0 0 60%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      right: -150px;
+      z-index: 1;
+      height: 90vh;
+      bottom: 10px;
+    }
+
+    .image img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    p{
+    text-align: center;
+    margin-top: -20px;
+    }
+    /* Formulaire avec barre de défilement */
+    .form-container {
+      position: relative;
+      flex: 0 0 60%;
+      max-width: 600px;
+      max-height: 85vh;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 2;
+      color: #333;
+      margin-left: -250px;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #9898E3 rgba(255, 255, 255, 0.3);
+    }
+
+    .form-container::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .form-container::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+
+    .form-container::-webkit-scrollbar-thumb {
+      background: #9898E3;
+      border-radius: 4px;
+    }
+
+    .form-container::-webkit-scrollbar-thumb:hover {
+      background: #7c7cdb;
+    }
+
+    /* Dégradé violet à droite */
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, #9797E1 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .form-title {
+      color: #9898E3;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #454545;
+    }
+
+    .input {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .input:focus {
+      border-color: #9898E3;
+      outline: none;
+      box-shadow: 0 0 6px #9898E3aa;
+    }
+
+    .input-icon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon-wrapper input {
+      padding: 0.5rem 40px 0.5rem 2.2rem;
+    }
+
+    .input-icon-wrapper i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #a9a9d6;
+      pointer-events: none;
+      font-size: 1rem;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #a9a9d6;
+      font-size: 1rem;
+      padding: 4px;
+      z-index: 999;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gender-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .gender-option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .gender-option input[type="radio"] {
+      transform: scale(1.2);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-top: 0.2rem;
+    }
+
+    .checkbox-group label {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .checkbox-group a {
+      color: #5F67C7;
+      text-decoration: none;
+    }
+
+    .checkbox-group a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #9898E3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-submit:hover {
+      background-color: #7c7cdb;
+    }
+
+    .login-text {
+      text-align: center;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .login-text a {
+      color: #5F67C7;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .login-text a:hover {
+      text-decoration: underline;
+    }
+
+    .gradient-title {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #5C5CEA, #2E8C5A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .page-container {
+        padding: 1rem;
+        flex-direction: column;
+      }
+      
+      .image {
+        display: none;
+      }
+      
+      .form-container {
+        margin-left: 0;
+        max-width: 100%;
+        flex: 1;
+      }
+      
+      .gradient-overlay {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="image">
+      <img src="phon.png" alt="Doctor illustration" />
+    </div>
+    
+    <div class="gradient-overlay"></div>
+    
+    <div class="form-container">
+      <h2 class="form-title gradient-title">Bienvenue sur LocDoc!</h2>
+      <p class="form-subtitle">Inscrivez-vous et Accédez à un réseau de médecins qualifiés en quelques clics</p>
+      
+      <form class="form" action="#" method="POST">
+        <!-- Identité -->
+        <div class="form-group">
+          <label for="nom" class="label">Identité</label>
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-user"></i>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              placeholder="Nom"
+              required
+              class="input"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-user"></i>
+            <input
+              type="text"
+              id="prenoms"
+              name="prenoms"
+              placeholder="Prénoms"
+              required
+              class="input"
+            />
+          </div>
+          <div class="gender-row">
+            <div class="gender-option">
+              <input type="radio" id="masculin" name="genre" value="masculin" required />
+              <label for="masculin">Homme</label>
+            </div>
+            <div class="gender-option">
+              <input type="radio" id="feminin" name="genre" value="feminin" required />
+              <label for="feminin">Femme</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date de naissance -->
+        <div class="form-group">
+          <label for="date_naissance" class="label">Date de naissance</label>
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-calendar"></i>
+            <input
+              type="date"
+              id="date_naissance"
+              name="date_naissance"
+              required
+              class="input"
+            />
+          </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="form-group">
+          <label for="email" class="label">Contacts</label>
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+              class="input"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-phone"></i>
+            <input
+              type="tel"
+              id="Indicatif"
+              name="Indicatif"
+              placeholder="Indicatif Téléphonique (+229)"
+              required
+              class="input"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-phone"></i>
+            <input
+              type="tel"
+              id="telephone"
+              name="telephone"
+              placeholder="Tél (XXXXXXXX)"
+              required
+              class="input"
+            />
+          </div>
+        </div>
+
+        <!-- Rôle -->
+
+        <div class="form-group">
+          <label for="role" class="label">Rôle</label>
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-user-tag"></i>
+            <select id="role" name="role" required class="input">
+            <option value="patient" class="input" selected>Patient</option>
+            <option value="medecin" class="input">Médecin</option>
+            </select>
+          </div>
+        </div>
+
+        <!--Adresse-->
+        <div class="form-group">
+          <label for="adress" class="label">Adresse</label>
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="email"
+              id="Ville"
+              name="Ville"
+              placeholder="Ville"
+              required
+              class="input"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-icon-wrapper">
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="email"
+              id="Quartier"
+              name="Quartier"
+              placeholder="Quartier - Rue"
+              required
+              class="input"
+            />
+          </div>
+          </div>
+
+        <!-- Mot de passe -->
+        <div class="form-group">
+          <label for="password" class="label">Mot de passe</label>
+          <div class="input-icon-wrapper password-wrapper">
+            <i class="fa-solid fa-lock"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Entrez votre mot de passe"
+              required
+              class="input password-input"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              aria-label="Afficher/Masquer le mot de passe"
+              onclick="togglePasswordVisibility(this)"
+            >
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-icon-wrapper password-wrapper">
+            <i class="fa-solid fa-lock"></i>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Confirmez votre mot de passe"
+              required
+              class="input password-input"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              aria-label="Afficher/Masquer le mot de passe"
+              onclick="togglePasswordVisibility(this)"
+            >
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Conditions générales -->
+        <div class="checkbox-group">
+          <input type="checkbox" id="conditions" name="conditions" required />
+          <label for="conditions">
+            Je confirme avoir lu et accepté les <a href="#">conditions générales</a>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">Créer mon compte</button>
+      </form>
+
+      <p class="login-text">
+        Vous avez déjà un compte ? <a href="#">Connectez-vous</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function togglePasswordVisibility(button) {
+      const input = button.parentElement.querySelector("input");
+      const icon = button.querySelector("i");
+
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+  </script>
+</body>
+</html>

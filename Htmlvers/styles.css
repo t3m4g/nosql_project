@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.page-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* changement ici */
+  padding: 2rem 4rem;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.page-container::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-image: url('cart.jpg'); /* met ton image ici */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* contrôle la transparence */
+  z-index: 0;
+  pointer-events: none; /* laisse passer les clics */
+}
+
+/* Image à gauche */
+.image {
+  flex: 0 0 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  right: -150px; /* décale l’image vers la gauche */
+  z-index: 1;
+  height: 90vh;
+  bottom: 10px;
+}
+
+
+.image img {
+  height: 100%; /* plus grande hauteur */
+  width: auto;     /* pour bien remplir les 55% */
+  object-fit: contain;
+}
+
+/* Formulaire plus large, chevauchant fortement */
+.form-container {
+  position: relative;
+  flex: 0 0 60%; /* large */
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.2); /* fond plus transparent pour mieux voir le blur */
+  backdrop-filter: blur(10px); /* effet de flou */
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+  z-index: 2;
+  color: #333;
+  margin-left: -250px; /* gros chevauchement sur l’image */
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4); /* optionnel, pour un joli contour */
+}
+
+
+/* Dégradé violet à droite, au-dessus du background mais sous le formulaire */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%; /* correspond à la partie droite */
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, #9797E1 100%);
+  pointer-events: none; /* ne bloque pas les clics */
+  z-index: 1;
+}
+
+/* Styles simples formulaire */
+.form-title {
+  color: #9898E3;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #454545;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #9898E3;
+  outline: none;
+  box-shadow: 0 0 6px #9898E3aa;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #333;
+  cursor: pointer;
+  margin-top: -15px;
+}
+
+.remember input[type="checkbox"] {
+  transform: scale(1.5); /* optionnel : agrandir un peu la case */
+  vertical-align: middle;
+}
+
+
+.forgot-password a {
+  color: #5F67C7; /* violet */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #9898E3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #7c7cdb;
+}
+
+.signup-text {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.signup-text a {
+  color: #5F67C7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.gradient-title {
+  font-size: 2.5rem; /* ajuste la taille comme tu veux */
+  background: linear-gradient(to right, #5C5CEA, #2E8C5A);
+  -webkit-background-clip: text; /* clippe le background au texte */
+  -webkit-text-fill-color: transparent; /* rend le texte transparent pour voir le gradient */
+  background-clip: text;
+  color: transparent; /* fallback */}
+
+p{
+  text-align: center;
+  margin-top: -30px;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrapper input {
+  padding: 0.5rem 40px 0.5rem 2.2rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #a9a9d6;
+  font-size: 1rem;
+  padding: 4px;
+  z-index: 999;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-icon-wrapper i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a9a9d6;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+
+
