@@ -1,124 +1,42 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
-
-import './App.css'
-import Layout from "./components/Layout/Layout";
-import Home from './pages/Acceuil';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import RegisterDoctor from './pages/RegisterDocteur';
-import Dashboard from './pages/Dashboard';
-import DoctorProfile from './pages/DoctorProfile';
-import SearchDoctor from './pages/SearchDoctor';
-import PrendreRdv from './pages/PrendreRdv';
-import RegisterPage from './pages/TestRegister';
-import LoginPage from './pages/TestLogin';
-import TestFullPage from './pages/TestUtime';
 
 function AppRoutes() {
   return (
     <Routes>
+      
       <Route
         path="/"
         element={
-          <Layout>
-            <Home />
-          </Layout>
+          <div className="min-h-screen w-full bg-blue-300 flex items-center justify-center">
+            <h1 className="text-white text-3xl">Page test sans layout</h1>
+          </div>
         }
       />
-      <Route
-        path="/login"
-        element={
-          <Layout>
-            <Login />
-          </Layout>
-        }
-      />
-      <Route
-        path="/register"
-        element={
-          <Layout>
-            <Register />
-          </Layout>
-        }
-      />
-      <Route
-        path="/testregister"
-        element={
-            <RegisterPage />
-        }
-      />
-      <Route
-        path="/testlogin"
-        element={
-            <LoginPage />
-        }
-      />
-      <Route path="/test-page" element={<TestFullPage />} />
-      <Route
-        path="/add-doctor"
-        element={
-          <Layout>
-            <RegisterDoctor />
-          </Layout>
-        }
-      />
-      <Route
-        path="/dashboard"
-        element={
-          <Layout>
-            <Dashboard />
-          </Layout>
-        }
-      />
-      <Route
-        path="/profile/:id"
-        element={
-          <Layout>
-            <DoctorProfile />
-          </Layout>
-        }
-      />
-      <Route
-        path="/search"
-        element={
-          <Layout>
-            <SearchDoctor />
-          </Layout>
-        }
-      />
-      <Route
-        path="/prendre-rdv"
-        element={
-          <Layout>
-            <PrendreRdv />
-          </Layout>
-        }
-      />
+      
       <Route
         path="*"
         element={
-          <Layout>
-            <div>pas de pipo</div>
-          </Layout>
+          <div className="min-h-screen w-full bg-red-200 flex items-center justify-center">
+            <h1 className="text-white text-3xl">Page Not found</h1>
+          </div>
         }
       />
     </Routes>
   );
 }
 
-
-
-
 function App() {
   return (
+    <React.StrictMode>
       <BrowserRouter future={{ v7_startTransition: true }}>
-        {/* <Toaster /> */}
-        {/* <Sonner /> */}
-        <AppRoutes />
+        
+            <AppRoutes />
+        
       </BrowserRouter>
+    </React.StrictMode>
   );
 }
 
-export default App
+export default App;
