@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 function AppRoutes() {
   return (
     <Routes>
-      
       <Route
         path="/"
         element={
