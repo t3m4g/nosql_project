@@ -92,5 +92,15 @@ export default {
 			}
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+	require("tailwindcss-animate"),
+
+	function ({ addComponents }) {
+		addComponents({
+		  ".input-style": {
+			'@apply w-full py-2 pl-9 pr-4 border border-gray-300 rounded-md focus:outline-none focus:border-[#9898E3] focus:ring-2 focus:ring-[#9898E3]/40 text-base transition-shadow': {},
+		  },
+		});
+	  },
+  ],
 }

@@ -13,7 +13,7 @@ function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#EAEBF4] shadow-md z-50 px-16">
+    <header className=" top-0 left-0 right-0 bg-[#EAEBF4] shadow-md z-50 px-16">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between space-y-3">
         
         {/* Logo */}

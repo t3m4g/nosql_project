@@ -12,6 +12,9 @@ import Dashboard from './pages/Dashboard';
 import DoctorProfile from './pages/DoctorProfile';
 import SearchDoctor from './pages/SearchDoctor';
 import PrendreRdv from './pages/PrendreRdv';
+import RegisterPage from './pages/TestRegister';
+import LoginPage from './pages/TestLogin';
+import TestFullPage from './pages/TestUtime';
 
 function AppRoutes() {
   return (
@@ -40,6 +43,19 @@ function AppRoutes() {
           </Layout>
         }
       />
+      <Route
+        path="/testregister"
+        element={
+            <RegisterPage />
+        }
+      />
+      <Route
+        path="/testlogin"
+        element={
+            <LoginPage />
+        }
+      />
+      <Route path="/test-page" element={<TestFullPage />} />
       <Route
         path="/add-doctor"
         element={
