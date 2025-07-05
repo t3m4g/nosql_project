@@ -2,8 +2,8 @@ import Logo from "./../../assets/LOGO.png"
 
 function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-b from-white to-[#EAEBF4] border-t border-gray-300 text-gray-700 py-5 mt-10">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-b from-white to-[#EAEBF4] text-gray-700 py-5 mt-10">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mb-2 gap-8">
         
         <div className="space-y-2">
           <img src={Logo} alt="logo" className="w-24" />
@@ -31,7 +31,7 @@ function Footer() {
 
 
       </div>
-      <div className=" px-4 pt-1 flex flex-col md:flex-row justify-between items-center">
+      <div className="max-w-7xl border-t border-gray-300 mx-auto px-4 pt-4 flex flex-col md:flex-row justify-between items-center">
         <p className="text-gray-400 text-xs mb-2 md:mb-0">
         &copy; {new Date().getFullYear()} Tous droits réservés | LOCDOC.
         </p>
