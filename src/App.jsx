@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
 
 
 function AppRoutes() {
@@ -13,7 +14,17 @@ function AppRoutes() {
           </div>
         }
       />
-      
+      <Route
+        path="/test"
+        element={
+          <Layout>
+            <div className="min-h-screen w-full bg-red-200 flex items-center justify-center">
+              <h1 className="text-white text-3xl">Page Not found</h1>
+            </div>
+          </Layout>
+          
+        }
+      />
       <Route
         path="*"
         element={
